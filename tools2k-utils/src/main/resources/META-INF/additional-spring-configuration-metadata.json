@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "debug.debug-mode",
+    "type": "java.lang.Boolean",
+    "description": "调试模式"
+  },
+  {
+    "name": "login-check",
+    "type": "com.cfido.commons.spring.security.LoginCheckProperties",
+    "description": "login check account and password"
+  }
+]}

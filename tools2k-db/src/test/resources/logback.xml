@@ -1,0 +1,17 @@
+<configuration>   
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">   
+    <!-- encoder 默认配置为PatternLayoutEncoder -->   
+    <encoder>   
+      <pattern>[%thread] %-5level %d{HH:mm:ss} %class:%line - %msg %n</pattern>   
+    </encoder>   
+  </appender>   
+   
+  <logger name="com.liangwj" level="debug" additivity="false">  
+    <appender-ref ref="STDOUT"/>  
+  </logger>   
+    
+  <root level="ERROR">             
+    <appender-ref ref="STDOUT" />   
+  </root>     
+
+</configuration>  

@@ -1,0 +1,59 @@
+package com.liangwj.tools2k.db.logicObj;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.util.Assert;
+
+import com.liangwj.tools2k.annotation.api.AComment;
+
+/**
+ * <pre>
+ * 各类info bean的基类，主要功能就是自动获取createBy， createDate等数据
+ * </pre>
+ * 
+ * @author rock
+ *  2016年8月29日
+ */
+public class BaseViewModel<T extends BasePoObj<PO>, PO> {
+
+	protected T obj;
+	protected PO po;
+
+	public BaseViewModel() {
+	}
+
+	public BaseViewModel(T obj) {
+		Assert.notNull(obj,"逻辑对象不能为空");
+		Assert.notNull(obj.getPo(),"逻辑对象的po不能为空");
+		this.init(obj);
+	}
+
+	protected void init(T obj) {
+		this.obj = obj;
+		this.po = obj.getPo();
+
+		final Class<PO> poClass = obj.getPoClass();
+
+		try {
+			this.po = poClass.getDeclaredConstructor().newInstance();
+			BeanUtils.copyProperties(obj.getPo(), this.po);
+			// 必须拷贝一份po, 业务model层为了数据安全，就修改一些值，防止数据泄露
+
+			this.afterInit();
+		} catch (final Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 用于给子类继承，在init以后干些其他事情
+	 */
+	protected void afterInit() {
+
+	}
+
+	@AComment("数据库对象")
+	public PO getPo() {
+		return po;
+	}
+
+}
