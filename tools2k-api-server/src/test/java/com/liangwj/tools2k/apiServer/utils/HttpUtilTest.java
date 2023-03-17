@@ -25,7 +25,7 @@ public class HttpUtilTest {
 
 	@Test
 	public void testHttps() throws HttpUtilException, IOException {
-		HttpUtil.getInstance().doExecute("https://xxx.hk.us2k.net", null,false, null);
+		HttpUtil.getInstance().doExecute("https://www.baidu.com", null,false, null);
 	}
 	
 	@Test
