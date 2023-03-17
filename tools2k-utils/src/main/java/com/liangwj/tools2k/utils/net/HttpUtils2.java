@@ -131,7 +131,6 @@ public class HttpUtils2 {
 	/**
 	 * 获得一个httpClient， 自动识别是否是https模式
 	 *
-	 * @param url
 	 * @return
 	 */
 	private CloseableHttpClient createClient() {
@@ -144,12 +143,12 @@ public class HttpUtils2 {
 	/**
 	 * 执行http请求
 	 *
+	 * @param methodType
+	 *            GET/POST
 	 * @param url
-	 *            url
-	 * @param paramMap
+	 *            请求的链接
+	 * @param paramList
 	 *            参数
-	 * @param postMethod
-	 *            是否post
 	 * @param header
 	 *            header
 	 * @return
@@ -227,7 +226,6 @@ public class HttpUtils2 {
 	/**
 	 * 最简单的执行一个 get 请求
 	 * 
-	 * @param proxyInfo
 	 * @param url
 	 * @return
 	 * @throws HttpUtilException
@@ -283,8 +281,10 @@ public class HttpUtils2 {
 	 *            文件参数名
 	 * @param file
 	 *            文件
-	 * @param paramMap
+	 * @param paramList
 	 *            其他参数对
+	 * @param header
+	 *            请求的header
 	 * @return 服务器返回的内容
 	 * @throws IOException
 	 * @throws HttpUtilException

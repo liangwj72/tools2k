@@ -64,8 +64,6 @@ public class BasePoObj<T> {
 	/**
 	 * 该方法在update前执行，子类可覆盖该方法，进行一些额外的逻辑判断
 	 * 
-	 * @param obj
-	 *            要update的对象
 	 * @throws BaseApiException
 	 *             逻辑错误
 	 */
@@ -76,8 +74,6 @@ public class BasePoObj<T> {
 	/**
 	 * 该方法在delete前执行，子类可覆盖该方法，进行一些额外的逻辑判断
 	 * 
-	 * @param obj
-	 *            要删除的逻辑对象
 	 * @throws BaseApiException
 	 *             逻辑错误
 	 */

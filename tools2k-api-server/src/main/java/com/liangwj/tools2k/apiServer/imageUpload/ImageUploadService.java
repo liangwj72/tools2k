@@ -183,7 +183,7 @@ public class ImageUploadService {
 	 *
 	 * @param multipartFile
 	 *            上传的数据
-	 * @see ImageUploadService#DEFAULT_ROOT_PATH 默认保存的目录
+	 * @see ImageUploadProperties#DEFAULT_ATTACHMENTS_PATH 默认保存的目录
 	 */
 	public SaveResult save(MultipartFile multipartFile)
 			throws FileNotFoundException, InvalidImageFormatException, IOException {

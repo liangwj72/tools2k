@@ -110,9 +110,10 @@ public class ActionInfo {
 	/**
 	 * 通过拦截器传过来的参数，初始化
 	 *
-	 * @param request       HttpServletRequest
-	 * @param handlerMethod HandlerMethod
-	 * @param context       LoginContext
+	 * @param handlerMethod
+	 *            HandlerMethod
+	 * @param defaultLoginUrl
+	 *            默认登录url
 	 */
 	private void init(HandlerMethod handlerMethod, String defaultLoginUrl) {
 

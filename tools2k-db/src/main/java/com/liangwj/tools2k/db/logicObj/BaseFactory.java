@@ -14,7 +14,6 @@ import com.liangwj.tools2k.utils.other.TimeLimitMap;
  * </pre>
  * 
  * @author 梁颂声
- * @param <T>
  */
 public abstract class BaseFactory<OBJ extends BasePoObj<PO>, PO extends BasePo, ID extends Serializable>
 		extends BaseObjFactory<OBJ, PO, ID> {
@@ -80,7 +79,6 @@ public abstract class BaseFactory<OBJ extends BasePoObj<PO>, PO extends BasePo, 
 	/**
 	 * 删除对象前需要去除唯一索引的绑定
 	 * 
-	 * @return
 	 */
 	protected abstract void checkBeforeDelete(OBJ obj) throws BaseApiException;
 

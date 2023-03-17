@@ -121,8 +121,6 @@ public class ClassDescriber {
 
 	/**
 	 * 分析类
-	 * 
-	 * @return
 	 */
 	private void parser(Class<?> respClass, Map<String, Object> nodeMap) {
 

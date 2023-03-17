@@ -29,8 +29,6 @@ import com.liangwj.tools2k.utils.web.WebUtils;
  * Ajax接入方式的基类，用的是spring mvc
  * 
  * 带有自动判断JSONP的功能。
- * 其实 JSONP的判断可以直接用 {@link AbstractJsonpResponseBodyAdvice}，但这个类会导致界面不好看...
- * 在这个 颜值就是正义 的世界，我们还是做好看点吧。
  * 
  * </pre>
  * 

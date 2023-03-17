@@ -153,10 +153,10 @@ public class CookieSavedHttpClient {
 	 *
 	 * @param responseClass
 	 * @param url
-	 * @param paramMap
+	 * @param paramList
 	 * @param postMethod
 	 * @param header
-	 * @return
+	 * @return responseClass的实例
 	 * @throws HttpUtilException
 	 * @throws IOException
 	 */
@@ -183,7 +183,7 @@ public class CookieSavedHttpClient {
 	 *
 	 * @param url
 	 *            url
-	 * @param paramMap
+	 * @param paramList
 	 *            参数
 	 * @param postMethod
 	 *            是否post
@@ -191,7 +191,7 @@ public class CookieSavedHttpClient {
 	 *            额外的header
 	 * @param referer
 	 *            来源
-	 * @return
+	 * @return 请求返回的内容
 	 * @throws HttpUtilException
 	 * @throws IOException
 	 */

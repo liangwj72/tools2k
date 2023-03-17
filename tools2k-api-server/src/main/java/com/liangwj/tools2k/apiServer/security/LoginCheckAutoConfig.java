@@ -50,7 +50,6 @@ public class LoginCheckAutoConfig implements WebMvcConfigurer {
 	/**
 	 * 创建 LoginCheckInterceptor
 	 * 
-	 * @return
 	 */
 	@Autowired
 	private LoginCheckInterceptor loginCheckInterceptor;

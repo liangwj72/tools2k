@@ -22,7 +22,7 @@ import com.liangwj.tools2k.utils.other.QueueLinkedList;
  *  20-100
  *  100-300
  *  300-1000
- *  > 1000
+ *  - 1000
  * </pre>
  *
  * @author rock

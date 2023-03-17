@@ -204,7 +204,9 @@ public class JmxInWebService {
 	/**
 	 * 执行mbean中的一个方法
 	 * 
-	 * @param form
+	 * @param objectName
+	 * @param optName
+	 * @param paramInfo
 	 * @return
 	 * @throws BaseApiException
 	 */
@@ -348,7 +350,7 @@ public class JmxInWebService {
 	/**
 	 * 根据输入的字符串查找mbean
 	 * 
-	 * @param name
+	 * @param objectName
 	 * @return
 	 * @throws JMException
 	 * @throws MyMBeanNotFoundException

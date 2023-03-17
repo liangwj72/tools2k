@@ -147,7 +147,6 @@ public class RememberMeUserHandler {
 	 * @param request
 	 * @param response
 	 * @param clazz
-	 * @param userDetailService
 	 * @return
 	 */
 	public <T extends IWebUser> T getUser(HttpServletRequest request, HttpServletResponse response,

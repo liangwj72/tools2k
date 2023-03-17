@@ -127,7 +127,6 @@ public class LogUtil {
 	 *
 	 * @param out
 	 * @param e
-	 * @param filter
 	 * @param set
 	 */
 	private void printThrowable(PrintWriter out, Throwable e, Set<Throwable> set) {
@@ -151,7 +150,6 @@ public class LogUtil {
 	 *
 	 * @param out
 	 * @param traces
-	 * @param filter
 	 */
 	private void printStackTraceElements(PrintWriter out, StackTraceElement[] traces) {
 

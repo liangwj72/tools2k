@@ -9,6 +9,7 @@
 		<version>1.0</version>
 	</parent>
 
+	<name>com.liangwj.tools2k-utils</name>
 	<artifactId>tools2k-utils</artifactId>
 	<description>Spring 支持工具集合</description>
 
@@ -70,13 +71,11 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- /特殊的依赖 -->

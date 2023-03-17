@@ -13,7 +13,6 @@ import com.liangwj.tools2k.db.po.BasePo;
  * </pre>
  * 
  * @author 江凯文
- * @param <T>
  */
 public abstract class BaseDomainWithBasePo<PO extends BasePo, ID extends Serializable>
 		extends BaseDomainWithCache<PO, ID> {

@@ -137,16 +137,14 @@ public abstract class BaseCommomDaoEntityManager implements ICommonDao {
 	/**
 	 * 可根据输入的vo的类型，执行分页查询
 	 * 
-	 * @param sql
+	 * @param sqlStartWithFrom
 	 *            要执行的sql
-	 * @param countHsql
-	 *            计算总数的sql
+	 * @param form
+	 *            分页表单
 	 * @param beanClass
 	 *            vo的class
 	 * @param params
 	 *            参数数组
-	 * @param form
-	 *            分页表单
 	 * @return
 	 * @throws DaoException
 	 */
@@ -263,7 +261,6 @@ public abstract class BaseCommomDaoEntityManager implements ICommonDao {
 	 * 保存到数据库
 	 * 
 	 * @param po
-	 * @return
 	 * @throws DaoException
 	 */
 	@Override

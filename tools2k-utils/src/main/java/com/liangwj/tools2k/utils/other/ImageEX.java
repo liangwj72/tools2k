@@ -90,7 +90,6 @@ public class ImageEX {
 	 *            格式
 	 * @param out
 	 *            输出流
-	 * @return
 	 * @throws IOException
 	 */
 	public void outPutImage(String formatName, OutputStream out) throws IOException {
@@ -108,7 +107,6 @@ public class ImageEX {
 	 *            文件格式
 	 * @param f
 	 *            文件对象
-	 * @return 图片
 	 * @throws IOException
 	 */
 	public void outPutImage(String formatName, File f) throws IOException {

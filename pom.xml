@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- 主项目直接继承 Spring Boot，为的是统一版本 -->
@@ -8,6 +10,27 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.14</version>
 	</parent>
+
+	<name>com.liangwj.tools2k-pom</name>
+	<description>A Java Spring tools </description>
+	<url>https://github.com/liangwj72/tools2k</url>
+	<licenses>
+		<license>
+			<name>MIT</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Alex Liang</name>
+			<email>liangwj72a@gmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:https://github.com/liangwj72/tools2k.git</connection>
+		<developerConnection>scm:git:https://github.com/liangwj72/tools2k.git</developerConnection>
+		<url>https://github.com/liangwj72/tools2k</url>
+	</scm>
 
 	<!-- 主项目信息 -->
 	<groupId>com.liangwj</groupId>
@@ -34,7 +57,6 @@
 		<module>tools2k-utils</module>
 		<module>tools2k-mail</module>
 	</modules>
-	<!-- /项目列表 -->
 
 	<dependencyManagement>
 		<!-- 我们在这里统一管理我们常用依赖的版本号，这样在子模块中就不需要写版本号了 -->
@@ -45,7 +67,7 @@
 				<!-- 带监控的连接池 -->
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid-spring-boot-starter</artifactId>
-				<version>1.2.11</version>
+				<version>1.2.16</version>
 			</dependency>
 
 			<dependency>
@@ -152,18 +174,17 @@
 	<!-- 发布地址，用户名和密码在setting.xml中 -->
 	<distributionManagement>
 		<repository>
-			<id>sonatype</id>
-			<name>sonatype Repository Release</name>
+			<id>ossrh</id>
 			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 		<snapshotRepository>
-			<id>sonatype</id>
-			<name>sonatype Repository Snapshots</name>
+			<id>ossrh</id>
 			<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
+
 		<!-- 统一配置所有项目的banner.txt文件放在 banner目录下 -->
 		<resources>
 			<resource>
@@ -177,28 +198,79 @@
 		</resources>
 
 		<plugins>
+
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+						<configuration>
+							<keyname>0xFEAA8699</keyname>
+							<passphraseServerId>0xFEAA8699</passphraseServerId>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<failOnError>false</failOnError>
+                    <doclint>none</doclint>
+					<nohelp>true</nohelp>
+					<show>private</show>
+					<additionalJOptions>
+						<additionalJOption>-J-Duser.language=zh</additionalJOption>
+						<additionalJOption>-J-Duser.region=CN</additionalJOption>
+					</additionalJOptions>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- 必须有这个资源的plugin，否则上面的资源配置不生效 -->
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<useDefaultDelimiters>true</useDefaultDelimiters>
 					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-
-			<!-- javadoc的plusin,主要是设置了页脚 -->
-			<plugin>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<nohelp>true</nohelp>
-					<show>private</show>
-					<bottom>
-						<![CDATA[Copyright 2022 ops2022]]>
-					</bottom>
-					<additionalJOptions>
-						<additionalJOption>-J-Duser.language=zh</additionalJOption>
-						<additionalJOption>-J-Duser.region=CN</additionalJOption>
-					</additionalJOptions>
 				</configuration>
 			</plugin>
 

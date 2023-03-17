@@ -7,7 +7,7 @@ import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.apiServer.beans.BaseResponse;
 
 /**
- * Druid 监控的数据列表，返回的是List<Map<String, Object>>
+ * Druid 监控的数据列表
  *
  * @author rock
  *

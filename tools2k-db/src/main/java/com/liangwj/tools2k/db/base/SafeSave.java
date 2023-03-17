@@ -99,7 +99,6 @@ public class SafeSave<PO> {
 	/**
 	 * 找出所有Column注解定义了长度的字符串属性，用于放在保存到数据库时，内容长度过长
 	 * 
-	 * @param entityClass
 	 * @return
 	 */
 	private List<StringPropWithLength> findStringPropWithLength() {
