@@ -6,7 +6,8 @@
 	<parent>
 		<groupId>com.liangwj</groupId>
 		<artifactId>tools2k-pom</artifactId>
-		<version>1.0</version>
+		<version>1.0.1</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<name>com.liangwj.tools2k-api-server</name>
