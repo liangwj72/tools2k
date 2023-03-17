@@ -10,7 +10,7 @@
 	</parent>
 
 	<!-- 主项目信息 -->
-	<groupId>com.liangwj.tools2k</groupId>
+	<groupId>com.liangwj</groupId>
 	<artifactId>tools2k-pom</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -56,25 +56,25 @@
 
 			<!-- 我们自己的工具类项目 -->
 			<dependency>
-				<groupId>com.liangwj.tools2k</groupId>
+				<groupId>com.liangwj</groupId>
 				<artifactId>tools2k-api-server</artifactId>
 				<version>${version.tools2k.tools}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>com.liangwj.tools2k</groupId>
+				<groupId>com.liangwj</groupId>
 				<artifactId>tools2k-utils</artifactId>
 				<version>${version.tools2k.tools}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>com.liangwj.tools2k</groupId>
+				<groupId>com.liangwj</groupId>
 				<artifactId>tools2k-db</artifactId>
 				<version>${version.tools2k.tools}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>com.liangwj.tools2k</groupId>
+				<groupId>com.liangwj</groupId>
 				<artifactId>tools2k-mail</artifactId>
 				<version>${version.tools2k.tools}</version>
 			</dependency>
@@ -152,31 +152,16 @@
 	<!-- 发布地址，用户名和密码在setting.xml中 -->
 	<distributionManagement>
 		<repository>
-			<id>ops2022</id>
-			<name>ops2022 Repository Release</name>
-			<url>https://nexus3.mgr.ops2022.vip/repository/maven-releases</url>
+			<id>sonatype</id>
+			<name>sonatype Repository Release</name>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 		<snapshotRepository>
-			<id>ops2022</id>
-			<name>ops2022 Repository Snapshots</name>
-			<url>https://nexus3.mgr.ops2022.vip/repository/maven-snapshots</url>
+			<id>sonatype</id>
+			<name>sonatype Repository Snapshots</name>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-
-	<repositories>
-		<repository>
-			<!-- commons工具包在这个仓库 -->
-			<id>ops2022</id>
-			<name>nnland Maven 仓库</name>
-			<url>https://nexus3.mgr.ops2022.vip/repository/maven-public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 	<build>
 		<!-- 统一配置所有项目的banner.txt文件放在 banner目录下 -->

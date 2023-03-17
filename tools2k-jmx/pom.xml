@@ -7,7 +7,7 @@
 
 	<!-- 主项目直接继承 我们自己定义的parent -->
 	<parent>
-		<groupId>com.liangwj.tools2k</groupId>
+		<groupId>com.liangwj</groupId>
 		<artifactId>tools2k-pom</artifactId>
 		<version>1.0</version>
 	</parent>
