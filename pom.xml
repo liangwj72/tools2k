@@ -183,7 +183,64 @@
 		</snapshotRepository>
 	</distributionManagement>
 
+
 	<build>
+		<!-- 可以通过 profile选用的 plugin -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.6.13</version>
+					<extensions>true</extensions>
+					<configuration>
+						<serverId>ossrh</serverId>
+						<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+						<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>3.0.1</version>
+					<executions>
+						<execution>
+							<id>sign-artifacts</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<configuration>
+						<failOnError>false</failOnError>
+						<doclint>none</doclint>
+						<nohelp>true</nohelp>
+						<show>private</show>
+						<additionalJOptions>
+							<additionalJOption>-J-Duser.language=zh</additionalJOption>
+							<additionalJOption>-J-Duser.region=CN</additionalJOption>
+						</additionalJOptions>
+					</configuration>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+
+			</plugins>
+		</pluginManagement>
 
 		<!-- 统一配置所有项目的banner.txt文件放在 banner目录下 -->
 		<resources>
@@ -197,37 +254,16 @@
 			</resource>
 		</resources>
 
+		<!-- 一定会用到 plugin -->
 		<plugins>
-
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.13</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
-
+			<!-- 用于配合上面的banner目录配置 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-						<configuration>
-							<keyname>0xFEAA8699</keyname>
-							<passphraseServerId>0xFEAA8699</passphraseServerId>
-						</configuration>
-					</execution>
-				</executions>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<useDefaultDelimiters>true</useDefaultDelimiters>
+					<encoding>UTF-8</encoding>
+				</configuration>
 			</plugin>
 
 			<plugin>
@@ -242,38 +278,29 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<failOnError>false</failOnError>
-                    <doclint>none</doclint>
-					<nohelp>true</nohelp>
-					<show>private</show>
-					<additionalJOptions>
-						<additionalJOption>-J-Duser.language=zh</additionalJOption>
-						<additionalJOption>-J-Duser.region=CN</additionalJOption>
-					</additionalJOptions>
-				</configuration>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- 必须有这个资源的plugin，否则上面的资源配置不生效 -->
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<useDefaultDelimiters>true</useDefaultDelimiters>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-
 		</plugins>
+
 	</build>
+
+	<!-- 各类 profile -->
+	<profiles>
+		<profile>
+			<!-- 发版用的 profile -->
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-javadoc-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<artifactId>maven-gpg-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

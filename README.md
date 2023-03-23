@@ -7,3 +7,4 @@
 
 > 注意事项
 - GPG密钥生成后，一定要发布到服务器
+- key 查看命令 `gpg --list-secret-keys --keyid-format LONG`
