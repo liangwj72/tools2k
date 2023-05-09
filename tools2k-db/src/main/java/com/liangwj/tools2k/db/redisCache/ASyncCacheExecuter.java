@@ -185,12 +185,6 @@ public class ASyncCacheExecuter implements IASyncCacheExecuter, SelfNaming {
 		return res;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cfido.commons.spring.redis.IASyncCacheExecuter#putIfAbsent(org.
-	 * springframework.cache.Cache, java.lang.Object, java.lang.Object)
-	 */
 	@Override
 	public ValueWrapper putIfAbsent(Cache cache, Object key, Object value) {
 		Assert.notNull(cache, "cache 不能为空");

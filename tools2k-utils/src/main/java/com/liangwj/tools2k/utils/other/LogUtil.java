@@ -27,7 +27,7 @@ public class LogUtil {
 	private final Set<String> packageWhiteList = new HashSet<>();
 
 	private LogUtil() {
-		this.packageWhiteList.add("com.cfido");
+		this.packageWhiteList.add("com.liangwj");
 	}
 
 	/**

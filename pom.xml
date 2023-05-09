@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.9</version>
+		<version>2.7.11</version>
 	</parent>
 
 	<name>com.liangwj.tools2k-pom</name>
@@ -35,7 +35,7 @@
 	<!-- 主项目信息 -->
 	<groupId>com.liangwj</groupId>
 	<artifactId>tools2k-pom</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -47,7 +47,7 @@
 		<!-- 时间变量，用于自动写在各个项目的banner中 -->
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
-		<version.tools2k.tools>1.0.2</version.tools2k.tools>
+		<version.tools2k.tools>1.0.3</version.tools2k.tools>
 	</properties>
 
 	<!-- 项目块列表 -->

@@ -54,7 +54,7 @@ public class SortedLockAspectService {
 	 * @param joinPoint
 	 * @throws Throwable
 	 */
-	@Around("@annotation(com.cfido.commons.spring.sortedLock.ANeedSortLock)")
+	@Around("@annotation(com.liangwj.tools2k.utils.sortedLock)")
 	public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 		// 执行原来的方法
 		this.lastMethodName = joinPoint.getSignature().getName();// 获得最后一次拦截的方法名

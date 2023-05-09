@@ -51,7 +51,7 @@ public class ClassDescriber {
 		private final Set<String> packageList = new HashSet<>();
 
 		public DefaultFieldDescFilter() {
-			this.packageList.add("com.cfido");
+			this.packageList.add("com.liangwj");
 		}
 
 		@Override

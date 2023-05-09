@@ -1,12 +1,12 @@
 {"properties": [
   {
-    "name": "debug.debug-mode",
-    "type": "java.lang.Boolean",
+    "name": "debug",
+    "type": "com.liangwj.tools2k.apiServer.debugMode.DebugModeProperties",
     "description": "调试模式"
   },
   {
     "name": "login-check",
-    "type": "com.cfido.commons.spring.security.LoginCheckProperties",
+    "type": "com.liangwj.tools2k.apiServer.security.LoginCheckProperties",
     "description": "login check account and password"
   }
 ]}

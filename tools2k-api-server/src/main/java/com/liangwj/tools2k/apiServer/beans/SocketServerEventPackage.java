@@ -1,6 +1,7 @@
 package com.liangwj.tools2k.apiServer.beans;
 
 import com.liangwj.tools2k.annotation.api.AComment;
+import com.liangwj.tools2k.apiServer.websocket.beans.ResponseTypeEnum;
 
 /**
  * <pre>
@@ -19,7 +20,7 @@ public class SocketServerEventPackage extends BaseSocketPackage {
 	private final String eventName;
 
 	public SocketServerEventPackage(Object event) {
-		super(1);
+		super(ResponseTypeEnum.Event);
 
 		this.eventName = event.getClass().getSimpleName();
 		this.data = event;
