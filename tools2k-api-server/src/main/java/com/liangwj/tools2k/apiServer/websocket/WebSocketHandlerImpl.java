@@ -151,18 +151,16 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
 		long useTimeMs = TimeUnit.NANOSECONDS.toMillis(useTimeNano); // 毫秒时间
 
 		if (log.isDebugEnabled()) {
-			String paramStr = null;
-			if (param != null && message.getPayloadLength() < 1024) {
-				// 如果上传的内容超过1K，就不输出在debug log中
-				paramStr = JSON.toJSONString(param, true);
-			}
-
-			String url = null;
 			if (cmd != null) {
-				url = cmd.getUrl();
-			}
+				String url = cmd.getUrl();
+				String paramStr = null;
+				if (param != null && message.getPayloadLength() < 1024) {
+					// 如果上传的内容超过1K，就不输出在debug log中
+					paramStr = JSON.toJSONString(param, true);
+				}
 
-			log.debug("调用接口: {} 时间消耗 :{}ms \n绑定表单的结果:{}", url, useTimeMs, paramStr);
+				log.debug("调用接口: {} 时间消耗 :{}ms \n绑定表单的结果:{}", url, useTimeMs, paramStr);
+			}
 		}
 
 		// 统计访问次数
@@ -174,6 +172,10 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
 
 	@Override
 	public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
+		if (!(message instanceof TextMessage)) {
+			log.warn("收到了非字符型的信息，类型为{}, 该类型忽略", message.getClass().getSimpleName());
+			return;
+		}
 
 		this.threadPool.addNewTask(new WebSocketTask(session, message));
 	}
@@ -227,10 +229,6 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
 	}
 
 	private CmdBean getCmdBean(WebSocketMessage<?> message) {
-		if (!(message instanceof TextMessage)) {
-			log.warn("收到了非字符型的信息，类型为{}, 该类型忽略", message.getClass().getSimpleName());
-			return null;
-		}
 
 		String jsonStr = ((TextMessage) message).getPayload();
 
@@ -242,7 +240,7 @@ public class WebSocketHandlerImpl implements WebSocketHandler {
 		}
 
 		if (cmd == null) {
-			log.debug("无法解析收到的内容");
+			log.debug("无法解析收到的内容:{}", jsonStr);
 			return null;
 		}
 
