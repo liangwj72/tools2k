@@ -1,12 +1,12 @@
 package com.liangwj.tools2k.apiServer.security;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.liangwj.tools2k.apiServer.loginCheck.IWebUser;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>

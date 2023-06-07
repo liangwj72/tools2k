@@ -7,10 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-
 import org.springframework.util.Assert;
 
 import com.liangwj.tools2k.annotation.form.AFormValidateMethod;
@@ -18,6 +14,11 @@ import com.liangwj.tools2k.beans.exceptions.FormValidateErrorInfoBean;
 import com.liangwj.tools2k.beans.exceptions.ValidateFormException;
 import com.liangwj.tools2k.utils.other.BaseThreadLocalHolder;
 import com.liangwj.tools2k.utils.other.LogUtil;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
 
 /**
  * FORM绑定工具
@@ -116,7 +117,7 @@ public class BinderUtil {
 	private static BaseThreadLocalHolder<Validator> validatorHolder = new BaseThreadLocalHolder<Validator>() {
 		@Override
 		protected Validator createObj() {
-			final Validator validator = javax.validation.Validation.buildDefaultValidatorFactory().getValidator();
+			final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 			return validator;
 		}
 	};

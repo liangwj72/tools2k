@@ -1,7 +1,5 @@
 package com.liangwj.tools2k.apiServer.web;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -17,6 +15,8 @@ import com.liangwj.tools2k.apiServer.dict.DictAutoConfig;
 import com.liangwj.tools2k.apiServer.jmxInWeb.JmxInWebAutoConfig;
 import com.liangwj.tools2k.apiServer.security.LoginCheckAutoConfig;
 import com.liangwj.tools2k.utils.spring.BaseAutoConfig;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * web项目的自动化配置

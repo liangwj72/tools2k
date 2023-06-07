@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.annotation.PostConstruct;
-
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 import com.liangwj.tools2k.utils.other.LogUtil;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * 用于实现顺序加锁的AOP拦截器，这个是目前比较完美的死锁解决方案

@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.util.Assert;
@@ -21,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 
 import com.liangwj.tools2k.utils.other.StringUtilsEx;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * <pre>

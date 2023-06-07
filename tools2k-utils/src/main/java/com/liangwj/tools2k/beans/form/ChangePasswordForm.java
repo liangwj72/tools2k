@@ -1,10 +1,11 @@
 package com.liangwj.tools2k.beans.form;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.annotation.form.AForm;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 /**
  * <pre>

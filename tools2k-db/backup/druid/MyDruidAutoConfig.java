@@ -25,7 +25,7 @@ import com.liangwj.tools2k.utils.spring.BaseAutoConfig;
 @ComponentScan(basePackageClasses = MyDruidAutoConfig.class)
 @AutoConfigureAfter(DruidDataSourceAutoConfigure.class)
 public class MyDruidAutoConfig extends BaseAutoConfig {
-	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MyDruidAutoConfig.class);
+	private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MyDruidAutoConfig.class);
 
 	// private static final String DEFAULT_USERNAME = "a";
 	// private static final String DEFAULT_PASSWORD = "a";
@@ -37,7 +37,7 @@ public class MyDruidAutoConfig extends BaseAutoConfig {
 	public StatFilter statFilter() {
 		CommonPublicImpl.isHasDruid = true;
 
-		log.debug("自动配置 - Druid监控, 默认启动Druid的数据库监控");
+		logger.debug("自动配置 - Druid监控, 默认启动Druid的数据库监控");
 		StatFilter res = new StatFilter();
 		res.setLogSlowSql(true);
 		res.setSlowSqlMillis(1000);
@@ -51,11 +51,10 @@ public class MyDruidAutoConfig extends BaseAutoConfig {
 
 		String urlPatterns = StringUtils.hasText(config.getUrlPattern()) ? config.getUrlPattern() : "/api/*";
 
-		log.info("自动配置 - Druid监控, 默认启动Druid的web请求监控，只监控{}", urlPatterns);
+		logger.info("自动配置 - Druid监控, 默认启动Druid的web请求监控，只监控{}", urlPatterns);
 
 		FilterRegistrationBean<WebStatFilter> registrationBean = new FilterRegistrationBean<WebStatFilter>();
-		WebStatFilter filter = new WebStatFilter();
-		registrationBean.setFilter(filter);
+		registrationBean.setFilter(new WebStatFilter());
 		registrationBean
 				.addUrlPatterns(urlPatterns);
 

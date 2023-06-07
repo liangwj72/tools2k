@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- 主项目直接继承 Spring Boot，为的是统一版本 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.11</version>
+		<version>3.1.0.0</version>
 	</parent>
 
 	<name>com.liangwj.tools2k-pom</name>
@@ -35,19 +33,17 @@
 	<!-- 主项目信息 -->
 	<groupId>com.liangwj</groupId>
 	<artifactId>tools2k-pom</artifactId>
-	<version>1.0.3</version>
+	<version>3.1.0.0</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<!-- 强制 freemarker 用低一点的版本，否则启动时好几个兼容警告 -->
-		<freemarker.version>2.3.29</freemarker.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 
 		<!-- 时间变量，用于自动写在各个项目的banner中 -->
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
-		<version.tools2k.tools>1.0.3</version.tools2k.tools>
+		<version.tools2k.tools>3.1.0.0</version.tools2k.tools>
 	</properties>
 
 	<!-- 项目块列表 -->
@@ -67,7 +63,7 @@
 				<!-- 带监控的连接池 -->
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid-spring-boot-starter</artifactId>
-				<version>1.2.16</version>
+				<version>1.2.18</version>
 			</dependency>
 
 			<dependency>
@@ -164,6 +160,12 @@
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpcore</artifactId>
 				<version>4.4.13</version>
+			</dependency>
+
+			<dependency>
+				<groupId>jakarta.persistence</groupId>
+				<artifactId>jakarta.persistence-api</artifactId>
+				<version>3.1.0</version>
 			</dependency>
 
 			<!-- /常用工具包 -->

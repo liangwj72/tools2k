@@ -203,11 +203,11 @@ public class MethodUtil {
 
 		MethodInfoOfGetter found = null;
 		for (MethodInfoOfGetter getter : list) {
-			if (getter.getAnnotation(javax.persistence.Id.class) != null) {
+			if (getter.getAnnotation(jakarta.persistence.Id.class) != null) {
 				found = getter;
 				break;
 			}
-			if (getter.getAnnotation(javax.persistence.EmbeddedId.class) != null) {
+			if (getter.getAnnotation(jakarta.persistence.EmbeddedId.class) != null) {
 				found = getter;
 				break;
 			}

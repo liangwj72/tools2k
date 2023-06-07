@@ -6,10 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpMethod;
@@ -24,6 +20,10 @@ import com.liangwj.tools2k.apiServer.debugMode.DebugModeProperties;
 import com.liangwj.tools2k.apiServer.loginCheck.ANeedCheckLogin;
 import com.liangwj.tools2k.apiServer.utils.ExceptionUtil;
 import com.liangwj.tools2k.beans.exceptions.BaseApiException;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * 认证安全拦截器

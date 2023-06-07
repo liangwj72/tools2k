@@ -7,8 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +21,7 @@ import com.liangwj.tools2k.utils.other.EncodeUtil;
 import com.liangwj.tools2k.utils.web.WebUtils;
 
 import freemarker.template.TemplateException;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * <pre>

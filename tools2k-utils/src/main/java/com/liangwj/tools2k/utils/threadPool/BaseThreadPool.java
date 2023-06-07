@@ -11,8 +11,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import javax.annotation.PreDestroy;
-
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.util.Assert;
@@ -22,6 +20,8 @@ import com.liangwj.tools2k.utils.other.DateUtil;
 import com.liangwj.tools2k.utils.other.LogUtil;
 import com.liangwj.tools2k.utils.other.MBeanUtils;
 import com.liangwj.tools2k.utils.other.QueueLinkedList;
+
+import jakarta.annotation.PreDestroy;
 
 /**
  * 一个线程池

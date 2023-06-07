@@ -1,9 +1,5 @@
 package com.liangwj.tools2k.apiServer.ajax.controller;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +19,10 @@ import com.liangwj.tools2k.beans.exceptions.ApiNotFoundException;
 import com.liangwj.tools2k.beans.exceptions.BaseApiException;
 import com.liangwj.tools2k.utils.web.BinderUtil;
 import com.liangwj.tools2k.utils.web.WebUtils;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>

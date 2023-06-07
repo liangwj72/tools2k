@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.Column;
+import jakarta.persistence.Column;
 
 import org.springframework.util.Assert;
 

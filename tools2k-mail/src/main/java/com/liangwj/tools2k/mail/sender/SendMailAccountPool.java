@@ -90,7 +90,7 @@ public class SendMailAccountPool {
 			javaMailProperties.put("mail.smtp.auth", true);
 			javaMailProperties.put("mail.smtp.timeout", 60000);
 			javaMailProperties.put("mail.smtp.starttls.enable", false);
-			javaMailProperties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+			javaMailProperties.put("mail.smtp.socketFactory.class", "jakarta.net.ssl.SSLSocketFactory");
 			javaMailProperties.put("mail.smtp.socketFactory.fallback", false);
 			ret.setJavaMailProperties(javaMailProperties);
 			return ret;
@@ -102,7 +102,7 @@ public class SendMailAccountPool {
 			javaMailProperties.put("mail.smtp.auth", true);
 			javaMailProperties.put("mail.smtp.timeout", 60000);
 			javaMailProperties.put("mail.smtp.starttls.enable", false);
-			javaMailProperties.put("mail.smtp.socketFactory.class", "javax.net.SocketFactory");
+			javaMailProperties.put("mail.smtp.socketFactory.class", "jakarta.net.SocketFactory");
 			javaMailProperties.put("mail.smtp.socketFactory.fallback", false);
 			ret.setJavaMailProperties(javaMailProperties);
 			return ret;

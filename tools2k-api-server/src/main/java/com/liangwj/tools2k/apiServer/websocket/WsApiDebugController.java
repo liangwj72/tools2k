@@ -3,8 +3,6 @@ package com.liangwj.tools2k.apiServer.websocket;
 import java.io.IOException;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +14,7 @@ import com.liangwj.tools2k.apiServer.utils.BaseApiDebugController;
 import com.liangwj.tools2k.apiServer.web.WebProjectAutoConfig;
 
 import freemarker.template.TemplateException;
+import jakarta.servlet.http.HttpServletRequest;
 
 /***
  * <pre>

@@ -4,14 +4,14 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.util.StringUtils;
 import org.springframework.web.method.HandlerMethod;
 
 import com.liangwj.tools2k.apiServer.loginCheck.ANeedCheckLogin;
 import com.liangwj.tools2k.utils.classUtils.ClassUtil;
 import com.liangwj.tools2k.utils.web.WebUtils;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * <pre>

@@ -2,8 +2,6 @@ package com.liangwj.tools2k.apiServer.imageUpload;
 
 import java.io.File;
 
-import javax.servlet.MultipartConfigElement;
-
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
@@ -11,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import jakarta.servlet.MultipartConfigElement;
 
 /**
  * 图片上传服务的相关配置

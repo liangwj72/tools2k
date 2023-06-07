@@ -1,9 +1,9 @@
 package com.liangwj.tools2k.beans.form;
 
-import javax.validation.constraints.NotNull;
-
 import com.liangwj.tools2k.annotation.api.AMock;
 import com.liangwj.tools2k.annotation.form.AForm;
+
+import jakarta.validation.constraints.NotNull;
 
 /**
  * <pre>

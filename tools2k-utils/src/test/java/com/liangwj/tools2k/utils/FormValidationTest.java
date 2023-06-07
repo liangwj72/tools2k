@@ -4,12 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
-
 import org.junit.jupiter.api.Test;
+
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * <pre>
@@ -86,7 +87,7 @@ public class FormValidationTest {
 	private List<JsonErrorInfoBean> validateForm(Object form) {// 验证某一个对象
 
 		List<JsonErrorInfoBean> list = new LinkedList<FormValidationTest.JsonErrorInfoBean>();
-		Validator validator = javax.validation.Validation.buildDefaultValidatorFactory()
+		Validator validator = Validation.buildDefaultValidatorFactory()
 				.getValidator();
 
 		Set<ConstraintViolation<Object>> constraintViolations = validator

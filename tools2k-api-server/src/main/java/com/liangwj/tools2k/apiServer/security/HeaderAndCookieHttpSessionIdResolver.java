@@ -3,12 +3,12 @@ package com.liangwj.tools2k.apiServer.security;
 import java.util.Collections;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.session.web.http.DefaultCookieSerializer;
 import org.springframework.session.web.http.HttpSessionIdResolver;
 import org.springframework.util.StringUtils;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>

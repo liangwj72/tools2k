@@ -2,8 +2,6 @@ package com.liangwj.tools2k.mail.sender;
 
 import java.util.Date;
 
-import javax.mail.internet.MimeMessage;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -12,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.liangwj.tools2k.mail.sender.SendMailAccountPool.MailAccount;
 import com.liangwj.tools2k.utils.other.LogUtil;
 import com.liangwj.tools2k.utils.threadPool.IMyTask;
+
+import jakarta.mail.internet.MimeMessage;
 
 /**
  * <pre>

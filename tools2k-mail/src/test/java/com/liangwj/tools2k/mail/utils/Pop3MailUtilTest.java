@@ -1,8 +1,8 @@
 package com.liangwj.tools2k.mail.utils;
 
-import javax.mail.MessagingException;
-
 import org.junit.jupiter.api.Test;
+
+import jakarta.mail.MessagingException;
 
 public class Pop3MailUtilTest {
 

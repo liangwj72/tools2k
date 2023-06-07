@@ -1,11 +1,11 @@
 package com.liangwj.tools2k.apiServer.dict.api.beans;
 
-import javax.validation.constraints.NotEmpty;
-
 import org.springframework.web.multipart.MultipartFile;
 
 import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.annotation.form.AForm;
+
+import jakarta.validation.constraints.NotEmpty;
 
 /**
  * <pre>

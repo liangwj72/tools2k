@@ -8,7 +8,7 @@ package com.liangwj.tools2k.beans.exceptions;
  * 
  * 样例代码见common-util的其中一个测试用例
  * 
- * javax.validation.ConstraintViolation error;
+ * jakarta.validation.ConstraintViolation error;
  * this.fieldName = error.getPropertyPath().toString();
  * this.errorMsg = error.getMessage();
  * 

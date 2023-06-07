@@ -2,16 +2,16 @@ package com.liangwj.tools2k.mail.utils;
 
 import java.util.Properties;
 
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.internet.MimeMessage;
-
 import org.springframework.util.Assert;
 
 import com.sun.mail.pop3.POP3Folder;
 import com.sun.mail.pop3.POP3Store;
+
+import jakarta.mail.Folder;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
+import jakarta.mail.internet.MimeMessage;
 
 /**
  * POP3收邮件工具
@@ -39,7 +39,7 @@ public class Pop3MailUtil {
 			Properties props = System.getProperties();
 
 			props.setProperty("mail.pop3.host", params.getHost());
-			props.setProperty("mail.pop3.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+			props.setProperty("mail.pop3.socketFactory.class", "jakarta.net.ssl.SSLSocketFactory");
 			props.setProperty("mail.pop3.socketFactory.fallback", "false");
 			props.setProperty("mail.pop3.port", String.valueOf(params.getPort()));
 			props.setProperty("mail.pop3.socketFactory.port", String.valueOf(params.getPort()));

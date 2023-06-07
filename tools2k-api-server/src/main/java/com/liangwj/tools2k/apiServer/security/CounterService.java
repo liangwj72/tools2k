@@ -6,9 +6,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.springframework.stereotype.Service;
 
 import com.liangwj.tools2k.annotation.api.AComment;
@@ -18,6 +15,9 @@ import com.liangwj.tools2k.utils.other.MBeanUtils;
 import com.liangwj.tools2k.utils.other.OsUtil;
 import com.liangwj.tools2k.utils.other.QueueLinkedList;
 import com.liangwj.tools2k.utils.threadPool.BaseThreadPool;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 /**
  * <pre>

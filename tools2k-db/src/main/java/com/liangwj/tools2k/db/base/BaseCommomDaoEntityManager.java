@@ -3,9 +3,9 @@ package com.liangwj.tools2k.db.base;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 import org.springframework.transaction.annotation.Transactional;
 

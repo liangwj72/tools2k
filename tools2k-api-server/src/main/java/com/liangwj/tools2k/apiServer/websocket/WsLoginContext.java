@@ -11,9 +11,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.jmx.export.annotation.ManagedOperation;
@@ -43,6 +40,9 @@ import com.liangwj.tools2k.beans.others.IFilter;
 import com.liangwj.tools2k.utils.other.ConverterUtil;
 import com.liangwj.tools2k.utils.spring.CommonMBeanDomainNaming;
 import com.liangwj.tools2k.utils.threadPool.BaseThreadPool;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 /**
  * <pre>

@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.liangwj</groupId>
 		<artifactId>tools2k-pom</artifactId>
-		<version>1.0.3</version>
+		<version>3.1.0.0</version>
 	</parent>
 
 	<name>com.liangwj.tools2k-utils</name>
@@ -65,19 +65,19 @@
 			<artifactId>httpmime</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- /其他的依赖 -->
 
 		<!-- 特殊的依赖，工具包中只有少量代码会使用这些库，所有作为provided-scope的， 如果有项目需要使用相关工具，请自行加依赖库 -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>javax.persistence</groupId>
-			<artifactId>javax.persistence-api</artifactId>
-		</dependency>
-
 		<!-- /特殊的依赖 -->
 
 	</dependencies>

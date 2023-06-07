@@ -3,13 +3,13 @@ package com.liangwj.tools2k.utils.web;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.util.StringUtils;
 
 import com.liangwj.tools2k.utils.other.EncryptUtil;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>

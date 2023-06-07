@@ -1,10 +1,10 @@
 package com.liangwj.tools2k.apiServer.ajax.api.beans;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.apiServer.security.CommonAdminWebUser;
 import com.liangwj.tools2k.utils.spring.WebContextHolderHelper;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @AComment("通用管理用户信息")
 public class CommonAdminUserInfoBean {

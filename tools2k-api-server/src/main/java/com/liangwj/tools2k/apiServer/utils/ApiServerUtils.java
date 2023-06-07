@@ -3,9 +3,6 @@ package com.liangwj.tools2k.apiServer.utils;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.web.multipart.MultipartFile;
 
 import com.liangwj.tools2k.annotation.api.AClass;
@@ -15,6 +12,9 @@ import com.liangwj.tools2k.apiServer.ajax.api.beans.ApiParamBean;
 import com.liangwj.tools2k.utils.classUtils.MethodUtil;
 import com.liangwj.tools2k.utils.classUtils.MethodUtil.MethodInfoOfSetter;
 import com.liangwj.tools2k.utils.other.OpenTypeUtil;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * <pre>

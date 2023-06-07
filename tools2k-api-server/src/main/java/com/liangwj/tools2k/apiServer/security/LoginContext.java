@@ -2,15 +2,15 @@ package com.liangwj.tools2k.apiServer.security;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.liangwj.tools2k.apiServer.loginCheck.IWebUser;
 import com.liangwj.tools2k.utils.spring.WebContextHolderHelper;
 import com.liangwj.tools2k.utils.web.WebUtils;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>
@@ -77,6 +77,7 @@ public class LoginContext extends BaseLoginContext {
 	 * 
 	 * @param userClass
 	 */
+	@Override
 	public void onLogout(Class<? extends IWebUser> userClass) {
 		HttpServletRequest request = WebContextHolderHelper.getRequest();
 		HttpServletResponse response = WebContextHolderHelper.getResponse();
@@ -110,6 +111,7 @@ public class LoginContext extends BaseLoginContext {
 	 * 
 	 * @param user
 	 */
+	@Override
 	public void onLoginSuccess(IWebUser user) {
 		this.onLoginSuccess(user, false);
 	}

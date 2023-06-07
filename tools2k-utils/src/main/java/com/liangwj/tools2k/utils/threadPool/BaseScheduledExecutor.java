@@ -7,13 +7,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import javax.annotation.PreDestroy;
-
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.jmx.export.annotation.ManagedOperation;
 
 import com.liangwj.tools2k.beans.system.OsInfo;
 import com.liangwj.tools2k.utils.other.MBeanUtils;
+
+import jakarta.annotation.PreDestroy;
 
 /**
  * 

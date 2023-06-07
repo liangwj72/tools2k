@@ -8,8 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;
@@ -17,6 +15,8 @@ import org.springframework.util.Assert;
 import com.liangwj.tools2k.annotation.api.AMethod;
 import com.liangwj.tools2k.apiServer.ajax.api.beans.DevPageResponse;
 import com.liangwj.tools2k.utils.classUtils.ClassUtil;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * <pre>

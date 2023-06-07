@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.error.AbstractErrorController;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
@@ -26,6 +23,8 @@ import com.liangwj.tools2k.apiServer.utils.ExceptionUtil;
 import com.liangwj.tools2k.utils.other.LogUtil;
 
 import freemarker.template.TemplateException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * 通用的错误处理器，自带模板
@@ -185,7 +184,7 @@ public class ErrorPageController extends AbstractErrorController {
 		final RequestAttributes requestAttributes = new ServletRequestAttributes(request);
 
 		final Throwable ex = this.errorAttributes.getError(new ServletWebRequest(request));
-		final String requestUri = this.getAttribute(requestAttributes, "javax.servlet.error.request_uri");
+		final String requestUri = this.getAttribute(requestAttributes, "jakarta.servlet.error.request_uri");
 		final int status = this.getStatus(request).value();
 
 		final ErrorInfoBean bean = new ErrorInfoBean(requestUri, status, ex);

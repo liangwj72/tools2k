@@ -6,11 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -21,6 +16,11 @@ import com.liangwj.tools2k.apiServer.loginCheck.IWebUser;
 import com.liangwj.tools2k.utils.other.BitUtils;
 import com.liangwj.tools2k.utils.other.EncryptUtil;
 import com.liangwj.tools2k.utils.web.CookieUtils;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>

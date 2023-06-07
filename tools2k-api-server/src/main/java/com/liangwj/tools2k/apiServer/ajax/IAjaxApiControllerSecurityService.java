@@ -1,11 +1,11 @@
 package com.liangwj.tools2k.apiServer.ajax;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.liangwj.tools2k.apiServer.beans.BaseResponse;
 import com.liangwj.tools2k.apiServer.utils.ApiMethodInfo;
 import com.liangwj.tools2k.beans.exceptions.BaseApiException;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * <pre>
