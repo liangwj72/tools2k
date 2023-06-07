@@ -1,5 +1,12 @@
 # java 常用工具
 
+## 版本：
+
+- 3.1.v1
+    springboot 修改为 3.x， 所以就变成一定要jdk 17 了
+
+- 1.0.3
+    恢复了websockt api
 
 ## 上传到maven的备忘
 - 参考文章: https://blog.csdn.net/cisumer/article/details/124839766
