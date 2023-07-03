@@ -212,6 +212,14 @@ public class ErrorPageController extends AbstractErrorController {
 	 */
 	private boolean isAjaxRequest(HttpServletRequest request) {
 		final String requestedWith = request.getHeader("X-Requested-With");
-		return requestedWith != null ? "XMLHttpRequest".equals(requestedWith) : false;
+		if ("XMLHttpRequest".equals(requestedWith)) {
+			return true;
+		}
+
+		final String contentType = request.getHeader("content-type");
+		if (contentType != null && contentType.toLowerCase().indexOf("json") > 0) {
+			return true;
+		}
+		return false;
 	}
 }
