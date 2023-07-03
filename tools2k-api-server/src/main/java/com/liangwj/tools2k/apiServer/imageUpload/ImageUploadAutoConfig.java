@@ -2,11 +2,11 @@ package com.liangwj.tools2k.apiServer.imageUpload;
 
 import java.io.File;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -18,7 +18,7 @@ import jakarta.servlet.MultipartConfigElement;
  * @author rock 2017年2月23日
  *
  */
-@Configurable
+@Configuration
 @EnableConfigurationProperties(ImageUploadProperties.class)
 @ComponentScan(basePackageClasses = ImageUploadAutoConfig.class)
 public class ImageUploadAutoConfig implements WebMvcConfigurer {
