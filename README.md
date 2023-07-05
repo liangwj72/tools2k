@@ -2,6 +2,9 @@
 
 ## 版本：
 
+- 3.1.v2
+    content-type保护json字样时，一律视为ajax请求
+
 - 3.1.v1
     springboot 修改为 3.x， 所以就变成一定要jdk 17 了
 
