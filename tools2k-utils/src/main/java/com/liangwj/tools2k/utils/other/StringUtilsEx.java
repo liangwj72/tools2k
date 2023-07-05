@@ -204,7 +204,7 @@ public class StringUtilsEx {
 		}
 		if (value.length() > i + length) {
 			return value.substring(i, i + length);
-		} else if (value.length() < i) {
+		} else if (value.length() > i) {
 			return value.substring(i);
 		} else {
 			return "";
