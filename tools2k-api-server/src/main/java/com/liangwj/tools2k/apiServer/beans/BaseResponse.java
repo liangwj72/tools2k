@@ -2,11 +2,16 @@ package com.liangwj.tools2k.apiServer.beans;
 
 import com.liangwj.tools2k.annotation.api.AComment;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * 响应返回结果基类
  * 
  * 2016年5月10日 下午2:01:17
  */
+@Setter
+@Getter
 public abstract class BaseResponse {
 
 	/**
@@ -18,20 +23,7 @@ public abstract class BaseResponse {
 	@AComment(value = "发送时间")
 	private final long time = System.currentTimeMillis();
 
-	public String getMessage() {
-		return message;
-	}
-
 	public boolean isSuccess() {
 		return true;
 	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public long getTime() {
-		return time;
-	}
-
 }

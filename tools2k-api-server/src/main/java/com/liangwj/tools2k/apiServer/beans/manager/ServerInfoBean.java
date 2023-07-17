@@ -2,7 +2,12 @@ package com.liangwj.tools2k.apiServer.beans.manager;
 
 import com.liangwj.tools2k.annotation.api.AComment;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @AComment("服务组件的状态")
+@Setter
+@Getter
 public class ServerInfoBean {
 
 	@AComment("框架管理账号是否是在配置文件中配置的")

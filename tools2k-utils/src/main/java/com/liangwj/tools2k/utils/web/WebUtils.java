@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,7 +29,6 @@ import jakarta.servlet.http.HttpServletRequest;
  *
  */
 public class WebUtils {
-	private final static Log log = LogFactory.getLog(WebUtils.class);
 
 	/**
 	 * 获取访问者的ip
@@ -39,21 +36,30 @@ public class WebUtils {
 	public static String findRealRemoteAddr(HttpServletRequest request) {
 		Assert.notNull(request, "request 参数不能为空");
 
-		String ip = request.getHeader("x-real-ip");
-		if (!StringUtils.hasText(ip)) {
-			ip = request.getHeader("x-forwarded-for");
-		}
-		if (!StringUtils.hasText(ip)) {
-			ip = request.getRemoteAddr();
+		String ipForwarded = request.getHeader("x-original-forwarded-for"); // K8S的ingress会用这个header
+		if (!StringUtils.hasText(ipForwarded)) {
+			ipForwarded = request.getHeader("x-forwarded-for");
 		}
 
-		if (log.isDebugEnabled()) {
-			log.debug("x-real-ip:" + request.getHeader("x-real-ip"));
-			log.debug("x-forwarded-for:" + request.getHeader("x-forwarded-for"));
-			log.debug("ip:" + ip);
-		}
+		// 例子 x-forwarded-for:120.230.99.11,172.16.0.248 , 用逗号分割多个地址，第一个就是用户的ip
+		if (StringUtils.hasText(ipForwarded)) {
+			int index = ipForwarded.indexOf(",");
+			if (index > 1) {
+				// 返回多个ip中的第一个
+				return ipForwarded.substring(0, index);
+			} else {
+				// 如果只有一个地址，就直接返回了
+				return ipForwarded;
+			}
+		} else {
+			// 如果没有x-forward的信息
+			String ip = request.getHeader("x-real-ip");
+			if (!StringUtils.hasText(ip)) {
+				ip = request.getRemoteAddr();
+			}
 
-		return ip;
+			return ip;
+		}
 	}
 
 	/**

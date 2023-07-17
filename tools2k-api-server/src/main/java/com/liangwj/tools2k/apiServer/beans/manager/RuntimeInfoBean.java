@@ -5,6 +5,9 @@ import java.io.Serializable;
 import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.beans.system.OsMemoryInfoBean;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * <pre>
  * ws 运行状态一个时间点的值
@@ -14,6 +17,8 @@ import com.liangwj.tools2k.beans.system.OsMemoryInfoBean;
  * 
  */
 @AComment("一个时间点的运行状态")
+@Setter
+@Getter
 public class RuntimeInfoBean implements Serializable {
 
 	private static final long serialVersionUID = -7509975362349926582L;
@@ -51,99 +56,11 @@ public class RuntimeInfoBean implements Serializable {
 	@AComment("线程数量")
 	private int threadCount;
 
-	public int getThreadCount() {
-		return threadCount;
-	}
-
-	public void setThreadCount(int threadCount) {
-		this.threadCount = threadCount;
-	}
-
-	public OsMemoryInfoBean getMemory() {
-		return memory;
-	}
-
-	public void setMemory(OsMemoryInfoBean memory) {
-		this.memory = memory;
-	}
-
-	public double getProcessCpuLoad() {
-		return processCpuLoad;
-	}
-
-	public void setProcessCpuLoad(double processCpuLoad) {
-		this.processCpuLoad = processCpuLoad;
-	}
-
-	public long getSendPacketCount() {
-		return sendPacketCount;
-	}
-
-	public void setSendPacketCount(long sendPacketCount) {
-		this.sendPacketCount = sendPacketCount;
-	}
-
-	public long getSendPacketPayload() {
-		return sendPacketPayload;
-	}
-
-	public void setSendPacketPayload(long sendPacketPayload) {
-		this.sendPacketPayload = sendPacketPayload;
-	}
-
-	public long getRecordTime() {
-		return this.recordTime;
-	}
-
 	public void reset() {
 		this.wsUpCount = 0;
 		this.wsUpPayload = 0;
 		this.wsDownCount = 0;
 		this.wsDownPayload = 0;
-	}
-
-	public void setRecordTime(long recordTime) {
-		this.recordTime = recordTime;
-	}
-
-	public long getWsUpCount() {
-		return wsUpCount;
-	}
-
-	public void setWsUpCount(long upCount) {
-		this.wsUpCount = upCount;
-	}
-
-	public long getWsUpPayload() {
-		return wsUpPayload;
-	}
-
-	public long getActionCount() {
-		return actionCount;
-	}
-
-	public void setActionCount(long actionCount) {
-		this.actionCount = actionCount;
-	}
-
-	public void setWsUpPayload(long upPayload) {
-		this.wsUpPayload = upPayload;
-	}
-
-	public long getWsDownCount() {
-		return wsDownCount;
-	}
-
-	public void setWsDownCount(long downCount) {
-		this.wsDownCount = downCount;
-	}
-
-	public long getWsDownPayload() {
-		return wsDownPayload;
-	}
-
-	public void setWsDownPayload(long downPayload) {
-		this.wsDownPayload = downPayload;
 	}
 
 	/** 是否当前秒 */

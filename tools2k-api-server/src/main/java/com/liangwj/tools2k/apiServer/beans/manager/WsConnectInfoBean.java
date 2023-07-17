@@ -3,6 +3,9 @@ package com.liangwj.tools2k.apiServer.beans.manager;
 import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.beans.others.DateBean;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * <pre>
  * web socket 连接信息
@@ -11,6 +14,8 @@ import com.liangwj.tools2k.beans.others.DateBean;
  * @author rock
  * 
  */
+@Setter
+@Getter
 public class WsConnectInfoBean {
 
 	private final IConnHandlerInfo handler;

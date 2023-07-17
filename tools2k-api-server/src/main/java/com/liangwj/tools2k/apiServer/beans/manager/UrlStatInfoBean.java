@@ -6,12 +6,17 @@ import java.util.List;
 import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.apiServer.security.UrlStatService.UrlBean;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * URL时间范围统计信息
  *
  * @author rock
  *
  */
+@Setter
+@Getter
 public class UrlStatInfoBean {
 	private final int id;
 	@AComment("次数")
@@ -28,26 +33,6 @@ public class UrlStatInfoBean {
 		this.timeRangeMin = timeRangeMin;
 		this.timeRangeMax = timeRangeMax;
 		this.count = count;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public long getCount() {
-		return count;
-	}
-
-	public long getTimeRangeMax() {
-		return timeRangeMax;
-	}
-
-	public long getTimeRangeMin() {
-		return timeRangeMin;
-	}
-
-	public List<UrlBean> getUrlHistory() {
-		return urlHistory;
 	}
 
 }

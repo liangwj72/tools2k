@@ -6,6 +6,9 @@ import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.apiServer.ajax.api.beans.CommonAdminUserInfoBean;
 import com.liangwj.tools2k.apiServer.beans.BaseResponse;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * <pre>
  * 服务器信息
@@ -14,6 +17,8 @@ import com.liangwj.tools2k.apiServer.beans.BaseResponse;
  * @author rock
  * 
  */
+@Setter
+@Getter
 public class ServerInfoResponse extends BaseResponse {
 
 	@AComment("服务器信息")
@@ -27,26 +32,6 @@ public class ServerInfoResponse extends BaseResponse {
 
 	public ServerInfoBean getServerInfo() {
 		return serverInfo;
-	}
-
-	public void setServerInfo(ServerInfoBean serverInfo) {
-		this.serverInfo = serverInfo;
-	}
-
-	public CommonAdminUserInfoBean getCurUser() {
-		return curUser;
-	}
-
-	public void setCurUser(CommonAdminUserInfoBean curUser) {
-		this.curUser = curUser;
-	}
-
-	public Map<String, String> getDict() {
-		return dict;
-	}
-
-	public void setDict(Map<String, String> dict) {
-		this.dict = dict;
 	}
 
 }

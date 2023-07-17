@@ -64,5 +64,11 @@
 
 		<!-- /Spring boot 批量依赖 -->
 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 </project>

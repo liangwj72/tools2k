@@ -4,6 +4,9 @@ import java.util.Map;
 
 import com.liangwj.tools2k.beans.exceptions.BaseApiException;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * <pre>
  * 调用发生异常时，通用的返回结果
@@ -11,6 +14,8 @@ import com.liangwj.tools2k.beans.exceptions.BaseApiException;
  *
  * @author rock 2016年6月28日
  */
+@Setter
+@Getter
 public class CommonErrorResponse extends BaseResponse {
 
 	/** BaseApiException 上额外的数据 */
@@ -34,21 +39,9 @@ public class CommonErrorResponse extends BaseResponse {
 		this.errorMsg = errorMessage;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public Map<String, Object> getExData() {
-		return exData;
-	}
-
 	@Override
 	public String getMessage() {
 		return this.errorMsg;
-	}
-
-	public String getErrorCode() {
-		return errorCode;
 	}
 
 	public void setExData(Map<String, Object> apiData) {

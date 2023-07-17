@@ -7,6 +7,9 @@ import com.liangwj.tools2k.beans.system.OsInfo;
 import com.liangwj.tools2k.beans.system.ThreadingInfo;
 import com.liangwj.tools2k.beans.system.VmInfo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * <pre>
  * 服务器硬件和虚拟机信息
@@ -15,6 +18,8 @@ import com.liangwj.tools2k.beans.system.VmInfo;
  * @author rock
  * 
  */
+@Setter
+@Getter
 public class OsInfoResponse extends BaseResponse {
 
 	@AComment("操作系统信息")
@@ -28,37 +33,5 @@ public class OsInfoResponse extends BaseResponse {
 
 	@AComment("虚拟机信息")
 	private VmInfo vm;
-
-	public OsInfo getOs() {
-		return os;
-	}
-
-	public void setOs(OsInfo os) {
-		this.os = os;
-	}
-
-	public ClassLoadingInfo getClassLoading() {
-		return classLoading;
-	}
-
-	public void setClassLoading(ClassLoadingInfo classLoading) {
-		this.classLoading = classLoading;
-	}
-
-	public ThreadingInfo getThreading() {
-		return threading;
-	}
-
-	public void setThreading(ThreadingInfo threading) {
-		this.threading = threading;
-	}
-
-	public VmInfo getVm() {
-		return vm;
-	}
-
-	public void setVm(VmInfo vm) {
-		this.vm = vm;
-	}
 
 }

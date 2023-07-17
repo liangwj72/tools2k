@@ -6,7 +6,12 @@ import com.liangwj.tools2k.annotation.api.AComment;
 import com.liangwj.tools2k.apiServer.beans.BaseResponse;
 import com.liangwj.tools2k.beans.system.DiskInfo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /** 返回所有ws运行图表数据 */
+@Setter
+@Getter
 public class RuntimeHistoryResponse extends BaseResponse {
 
 	@AComment("磁盘信息")
@@ -17,29 +22,5 @@ public class RuntimeHistoryResponse extends BaseResponse {
 
 	@AComment("图表数据")
 	private List<RuntimeInfoBean> list;
-
-	public List<RuntimeInfoBean> getList() {
-		return list;
-	}
-
-	public void setList(List<RuntimeInfoBean> list) {
-		this.list = list;
-	}
-
-	public DiskInfo getDiskInfo() {
-		return diskInfo;
-	}
-
-	public void setDiskInfo(DiskInfo diskInfo) {
-		this.diskInfo = diskInfo;
-	}
-
-	public List<UrlStatInfoBean> getUriStat() {
-		return uriStat;
-	}
-
-	public void setUriStat(List<UrlStatInfoBean> uriStat) {
-		this.uriStat = uriStat;
-	}
 
 }
