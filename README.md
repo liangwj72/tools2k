@@ -2,7 +2,7 @@
 
 ## 版本：
 
-- 3.1.v2
+- 3.1.v3
     content-type保护json字样时，一律视为ajax请求
 
 - 3.1.v1

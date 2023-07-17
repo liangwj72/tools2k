@@ -33,7 +33,7 @@
 	<!-- 主项目信息 -->
 	<groupId>com.liangwj</groupId>
 	<artifactId>tools2k-pom</artifactId>
-	<version>3.1.v2</version>
+	<version>3.1.v3</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -43,7 +43,7 @@
 		<!-- 时间变量，用于自动写在各个项目的banner中 -->
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
-		<version.tools2k.tools>3.1.v2</version.tools2k.tools>
+		<version.tools2k.tools>3.1.v3</version.tools2k.tools>
 	</properties>
 
 	<!-- 项目块列表 -->
